@@ -4,12 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class InventoryPage {
-    // Attributes
     private WebDriver driver;
 
+    // Locators for adding products to cart
     private By addBackpackButton = By.id("add-to-cart-sauce-labs-backpack");
     private By addBikeLightButton = By.id("add-to-cart-sauce-labs-bike-light");
+    // Locator for the shopping cart badge number
     private By cartNumber = By.className("shopping_cart_badge");
+    // Locators for removing products from cart
     private By removeBackpack = By.id("remove-sauce-labs-backpack");
     private By removeBikeLight = By.id("remove-sauce-labs-bike-light");
 
@@ -38,7 +40,7 @@ public class InventoryPage {
         return driver.findElement(cartNumber).getText();
     }
 
-    // Method to check if the remove button for the backpack
+    // Method to check if the remove button for the backpack is displayed
     public boolean isRemoveBackpackDisplayed() {
         return driver.findElement(removeBackpack).isDisplayed();
     }
